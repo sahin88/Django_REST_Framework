@@ -1,19 +1,21 @@
 from django.shortcuts import render
+from rest_framework import generics
+from .serializers import LoginSerializer, RegistrationSerilaizer, emailVerifySerializer, resetPasswordRequestEmailSerializer, setNewPasswordSerializer
+from rest_framework.views import APIView
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
+from rest_framework.decorators import api_view
 
 
 class LoginView(generics.GenericAPIView):
     serializer_class = LoginSerializer
 
     def post(self, request):
-        print('request', request.data)
 
         serialized_data = LoginSerializer(data=request.data)
         serialized_data.is_valid(raise_exception=True)
         user = serialized_data.validated_data['user']
 
         django_login(request, user)
-        # token, created = Token.objects.get_or_create(user=user)
-        # print('login_tokenm', serialized_data.validated_data['tokens'])
         return Response({'token': serialized_data.validated_data['tokens']},
                         status=status.HTTP_200_OK)
 

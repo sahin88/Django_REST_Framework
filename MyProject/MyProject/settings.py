@@ -31,7 +31,6 @@ SWAGGER_SETTINGS = {
             'in': 'header'
         }
     },
-
 }
 
 DEBUG = True
@@ -44,7 +43,7 @@ INSTALLED_APPS = [
     'account', 'django.contrib.admin', 'django.contrib.auth',
     'django.contrib.contenttypes', 'django.contrib.sessions',
     'django.contrib.messages', 'django.contrib.staticfiles', 'api_basic',
-    'rest_framework', 'drf_yasg'
+    'rest_framework', 'drf_yasg', 'django_extensions'
 ]
 
 MIDDLEWARE = [
@@ -131,22 +130,21 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
-
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 100,
+    'DEFAULT_AUTHENTICATION_CLASSES':
+    ('rest_framework_simplejwt.authentication.JWTAuthentication', ),
+    'DEFAULT_PAGINATION_CLASS':
+    'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE':
+    100,
 }
 
 #  'DEFAULT_PERMISSION_CLASSES': [
 #         'rest_framework.permissions.IsAuthenticated',
 #     ]
 
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'reiscicocuk001@gmail.com'
-EMAIL_HOST_PASSWORD = 'alexAa1!'
+EMAIL_HOST_USER = 'test@gmail.com'  #type your emaill
+EMAIL_HOST_PASSWORD = 'test1234'  #and your own password
