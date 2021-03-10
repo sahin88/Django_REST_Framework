@@ -1,8 +1,7 @@
 # Django_Rest_Framework_Account_Article_RestAPI
-# Django_Html_Css_Js_BlogApp_FullStack
 
 ## Features
-  -  Django 3.1.4
+  -  Django 3.0
   -  SQL database support with.
   -  Procfile for easy deployments
   -  User registration, logging, PasswordresetToken, VerifyEmail
