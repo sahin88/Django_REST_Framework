@@ -7,7 +7,7 @@
   -  User registration, logging, PasswordresetToken, VerifyEmail
   -  Custom User Model
 
-## Uml Diagram
+## Entity Relationship Diagram
 ![alt text](https://github.com/sahin88/Django_Rest_Framework_Account_Article_RestAPI/blob/main/MyProject/polls_models.png)
 
 
